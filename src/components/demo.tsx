@@ -1,3 +1,4 @@
+import { Slider } from '@ark-ui/solid'
 import { splitProps, type JSX } from 'solid-js'
 
 import { cx } from '~/lib/utils'
@@ -41,7 +42,7 @@ const Card1 = () => {
     <CardWrapper>
       <div class="mb-5 flex items-center justify-between">
         <h3 class={headingVariants({ size: '4' })}>Queue</h3>
-        <div class="-rt-r-my-1 flex gap-4">
+        <div class="my-1 flex gap-4">
           <Button styled={{ variant: 'ghost', size: '2' }} tabindex="-1">
             Clear
           </Button>
@@ -70,7 +71,7 @@ const Card1 = () => {
             class="box-border block flex-grow [width:var(--width)]"
             style={{ '--width': 0 }}
           >
-            <div class="rt-Text rt-r-size-2 rt-truncate">
+            <div class={textVariants({ size: '2', class: 'truncate' })}>
               The Less I Know the Better
             </div>
             <div
@@ -81,7 +82,7 @@ const Card1 = () => {
             </div>
           </div>
           <div class="box-border block">
-            <div data-accent-color="gray" class="rt-Text rt-r-size-2">
+            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
               3:39
             </div>
           </div>
@@ -112,7 +113,7 @@ const Card1 = () => {
             </div>
           </div>
           <div class="box-border block">
-            <div data-accent-color="gray" class="rt-Text rt-r-size-2">
+            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
               5:25
             </div>
           </div>
@@ -132,7 +133,9 @@ const Card1 = () => {
             class="box-border block flex-grow [width:var(--width)]"
             style={{ '--width': 0 }}
           >
-            <div class="rt-Text rt-r-size-2 rt-truncate">Cola</div>
+            <div class={textVariants({ size: '2', class: 'truncate' })}>
+              Cola
+            </div>
             <div
               data-accent-color="gray"
               class={textVariants({ size: '2', class: 'truncate' })}
@@ -172,7 +175,7 @@ const Card1 = () => {
             </div>
           </div>
           <div class="box-border block">
-            <div data-accent-color="gray" class="rt-Text rt-r-size-2">
+            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
               3:58
             </div>
           </div>
@@ -239,42 +242,24 @@ const Card2 = () => {
         >
           <path d="M16.3333 4.66669L13.5286 7.33335H11C9.89533 7.33335 9 8.22869 9 9.33335V10.6667C9 11.7714 9.89533 12.6667 11 12.6667H13.5286L16.3333 15.3334V4.66669Z" />
         </svg>
-        <div class="box-border block flex-grow">
-          <span
-            dir="ltr"
-            data-orientation="horizontal"
-            aria-disabled="false"
-            class={sliderVariants.root({ size: '2', variant: 'surface' })}
-            style={{ '--radix-slider-thumb-transform': 'translateX(-50%)' }}
-          >
-            <span data-orientation="horizontal" class={sliderVariants.track}>
-              <span
-                data-orientation="horizontal"
-                class={sliderVariants.range}
-                style={{ left: '0%', right: '20%' }}
-              />
-            </span>
-            <span
-              style={{
-                transform: 'var(--radix-slider-thumb-transform)',
-                position: 'absolute',
-                left: 'calc(80% - 3.6px)',
-              }}
-            >
-              <span
-                role="slider"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                aria-orientation="horizontal"
-                data-orientation="horizontal"
-                tabindex="-1"
-                class={sliderVariants.thumb}
-                data-radix-collection-item
-                aria-valuenow="80"
-              />
-            </span>
-          </span>
-        </div>
+
+        <Slider.Root
+          value={[20]}
+          class={sliderVariants.root({
+            size: '2',
+            variant: 'surface',
+          })}
+        >
+          <Slider.Control class="flex h-3 w-full items-center">
+            <Slider.Track class={sliderVariants.track}>
+              <Slider.Range class={sliderVariants.range} />
+            </Slider.Track>
+
+            <Slider.Thumb index={0} class={sliderVariants.thumb}>
+              <Slider.HiddenInput />
+            </Slider.Thumb>
+          </Slider.Control>
+        </Slider.Root>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 30 30"
@@ -351,7 +336,7 @@ const Card2 = () => {
             data-accent-color="gray"
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon-button', variant:'soft' }}
+            styled={{ type: 'icon-button', variant: 'soft' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -380,7 +365,7 @@ const Card2 = () => {
             data-accent-color="gray"
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon-button', variant:'soft' }}
+            styled={{ type: 'icon-button', variant: 'soft' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
