@@ -3,6 +3,9 @@ import styles from './select.module.css'
 
 export const selectVariants = {
   trigger: cva(['rt-reset', styles['rt-SelectTrigger']], {
+    defaultVariants: {
+      variant: 'surface',
+    },
     variants: {
       variant: {
         surface: styles['rt-variant-surface'],
@@ -20,6 +23,10 @@ export const selectVariants = {
   triggerInner: styles['rt-SelectTriggerInner'],
   icon: styles['rt-SelectIcon'],
   content: cva(styles['rt-SelectContent'], {
+    defaultVariants: {
+      size: '2',
+      variant: 'solid',
+    },
     variants: {
       size: {
         '1': styles['rt-r-size-1'],

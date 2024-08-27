@@ -13,6 +13,9 @@ export const baseDialogVariants = {
     },
   }),
   content: cva(styles['rt-BaseDialogContent'], {
+    defaultVariants: {
+      size: '3',
+    },
     variants: {
       size: {
         '1': styles['rt-r-size-1'],

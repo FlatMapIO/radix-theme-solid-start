@@ -2,6 +2,9 @@ import { cva } from '~/lib/utils'
 import styles from './popover.module.css'
 
 export const popoverVariants = cva(styles['rt-PopoverContent'], {
+  defaultVariants: {
+    size: '2',
+  },
   variants: {
     size: {
       '1': styles['rt-r-size-1'],

@@ -3,6 +3,10 @@ import styles from './progress.module.css'
 
 export const progressVariants = {
   root: cva(styles['rt-ProgressRoot'], {
+    defaultVariants: {
+      variant: 'surface',
+      size: '2',
+    },
     variants: {
       variant: {
         surface: styles['rt-variant-surface'],

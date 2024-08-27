@@ -3,6 +3,10 @@ import styles from './segmented-control.module.css'
 
 export const segmentedControlVariants = {
   root: cva(styles['rt-SegmentedControlRoot'], {
+    defaultVariants: {
+      size: '2',
+      variant: 'surface',
+    },
     variants: {
       variant: {
         surface: styles['rt-variant-surface'],

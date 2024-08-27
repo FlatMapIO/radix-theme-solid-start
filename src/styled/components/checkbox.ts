@@ -5,6 +5,10 @@ export const checkboxVariants = {
   root: cva(
     ['rt-reset', styles['rt-BaseCheckboxRoot'], styles['rt-CheckboxRoot']],
     {
+      defaultVariants: {
+        size: '2',
+        variant: 'surface',
+      },
       variants: {
         highContrast: {
           true: styles['rt-high-contrast'],
@@ -25,9 +29,7 @@ export const checkboxVariants = {
   indicator: styles['rt-BaseCheckboxIndicator'],
 }
 
-export type CheckboxVariants = VariantProps<
-  (typeof checkboxVariants)['root']
->
+export type CheckboxVariants = VariantProps<(typeof checkboxVariants)['root']>
 
 export const checkboxAttrs = (props: {
   disabled?: boolean

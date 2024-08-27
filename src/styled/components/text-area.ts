@@ -1,8 +1,12 @@
-import { cva } from '~/lib/utils'
+import { cva, type VariantProps } from '~/lib/utils'
 import styles from './text-area.module.css'
 
 export const textAreaVariants = {
   root: cva(['rt-reset', styles['rt-TextAreaRoot']], {
+    defaultVariants: {
+      size: '2',
+      variant: 'surface',
+    },
     variants: {
       variant: {
         surface: styles['rt-variant-surface'],
@@ -18,6 +22,8 @@ export const textAreaVariants = {
   }),
   input: styles['rt-TextAreaInput'],
 }
+
+export type TextAreaVariants = VariantProps<typeof textAreaVariants.root>
 
 export const textAreaAttrs = (props: { onePasswordFilled?: boolean }) => ({
   input: {

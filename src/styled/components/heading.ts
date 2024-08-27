@@ -2,6 +2,9 @@ import { cva, type VariantProps } from '~/lib/utils'
 import styles from './heading.module.css'
 
 export const headingVariants = cva(styles['rt-Heading'], {
+  defaultVariants: {
+    size: '6',
+  },
   variants: {
     size: {
       '1': styles['rt-r-size-1'],

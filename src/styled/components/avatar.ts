@@ -3,6 +3,10 @@ import styles from './avatar.module.css'
 
 export const avatarVariants = {
   root: cva(['rt-reset', styles['rt-AvatarRoot']], {
+    defaultVariants: {
+      size: '2',
+      variant: 'soft',
+    },
     variants: {
       highContrast: {
         true: styles['rt-high-contrast'],

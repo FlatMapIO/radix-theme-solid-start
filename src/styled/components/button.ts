@@ -7,6 +7,7 @@ export const buttonVariants = cva(['rt-reset', styles['rt-BaseButton']], {
     variant: 'solid',
     type: 'button',
   },
+
   variants: {
     type: {
       'icon-button': styles['rt-IconButton'],

@@ -5,6 +5,7 @@ export const hoverCardVariants = {
   content: cva(styles['rt-HoverCardContent'], {
     defaultVariants: {
       size: '2',
+      // max-width: 480px
     },
     variants: {
       size: {

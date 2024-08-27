@@ -2,6 +2,10 @@ import { cva, type VariantProps } from '~/lib/utils'
 import styles from './badge.module.css'
 
 export const badgeVariants = cva(['rt-reset', styles['rt-Badge']], {
+  defaultVariants: {
+    size: '2',
+    variant: 'soft',
+  },
   variants: {
     variant: {
       solid: styles['rt-variant-solid'],

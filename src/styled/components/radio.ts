@@ -3,6 +3,10 @@ import styles from './radio.module.css'
 
 export const radioVariants = {
   root: cva(['rt-reset', styles['rt-BaseRadioRoot']], {
+    defaultVariants: {
+      variant: 'surface',
+      size: '2',
+    },
     variants: {
       highContrast: {
         true: styles['rt-high-contrast'],
