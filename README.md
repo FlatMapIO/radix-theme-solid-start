@@ -17,7 +17,7 @@ This project is a template, so there's no need for installation. Simply clone th
 1. Clone the repository:
 
    ```
-   git clone https://github.com/your-username/radix-theme-solid-start.git
+   git clone --depth 1 https://github.com/FlatMapIO/radix-theme-solid-start
    cd radix-theme-solid-start
    ```
 
