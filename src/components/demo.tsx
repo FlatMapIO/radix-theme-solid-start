@@ -10,14 +10,14 @@ import { textVariants } from '~/styled/components/text'
 
 export const Demo = () => (
   <div class="flex flex-col items-start gap-6">
-    <div class="flex w-[416px] flex-shrink-0 flex-col gap-6">
+    <div class="flex w-[416px] flex-shrink-0 flex-col gap-6 [transform:scale(0.8)]">
       <Card1 />
       <Card2 />
     </div>
   </div>
 )
 
-const CardWrapper = (props: { children: JSX.Element }) => {
+const Card = (props: { children: JSX.Element }) => {
   return (
     <div
       class={cx(
@@ -37,9 +37,50 @@ const Button = (
   return <button {...rest} class={cx(buttonVariants(local.styled))} />
 }
 
+const Card1Item = (props: {
+  image: string
+  title: string
+  subtitle: string
+  duration: string
+}) => {
+  return (
+    <div class="flex items-center gap-3">
+      <img
+        src={props.image}
+        class="box-border block [height:var(--width)] [width:var(--width)]"
+        style={{
+          '--width': '48px',
+          '--height': '48px',
+          'object-fit': 'cover',
+          'border-radius': 'var(--radius-2)',
+        }}
+      />
+      <div
+        class="box-border block flex-grow [width:var(--width)]"
+        style={{ '--width': 0 }}
+      >
+        <div class={textVariants({ size: '2', class: 'truncate' })}>
+          {props.title}
+        </div>
+        <div
+          data-accent-color="gray"
+          class={textVariants({ size: '2', class: 'truncate' })}
+        >
+          {props.subtitle}
+        </div>
+      </div>
+      <div class="box-border block">
+        <div data-accent-color="gray" class={textVariants({ size: '2' })}>
+          {props.duration}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Card1 = () => {
   return (
-    <CardWrapper>
+    <Card>
       <div class="mb-5 flex items-center justify-between">
         <h3 class={headingVariants({ size: '4' })}>Queue</h3>
         <div class="my-1 flex gap-4">
@@ -56,169 +97,32 @@ const Card1 = () => {
         </div>
       </div>
       <div class="flex flex-col gap-4">
-        <div class="flex items-center gap-3">
-          <img
-            src="https://workos.imgix.net/images/79645741-51e0-47fc-bb40-2fa66cf9f68e.png?auto=format&fit=clip&q=80&w=192"
-            class="box-border block [height:var(--width)] [width:var(--width)]"
-            style={{
-              '--width': '48px',
-              '--height': '48px',
-              'object-fit': 'cover',
-              'border-radius': 'var(--radius-2)',
-            }}
-          />
-          <div
-            class="box-border block flex-grow [width:var(--width)]"
-            style={{ '--width': 0 }}
-          >
-            <div class={textVariants({ size: '2', class: 'truncate' })}>
-              The Less I Know the Better
-            </div>
-            <div
-              data-accent-color="gray"
-              class={textVariants({ size: '2', class: 'truncate' })}
-            >
-              Tame Impala – Currents
-            </div>
-          </div>
-          <div class="box-border block">
-            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
-              3:39
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <img
-            src="https://workos.imgix.net/images/95ff9b99-36f3-46d8-a3fe-9387fd7c3c32.png?auto=format&fit=clip&q=80&w=192"
-            class="box-border block [height:var(--width)] [width:var(--width)]"
-            style={{
-              '--width': '48px',
-              '--height': '48px',
-              'object-fit': 'cover',
-              'border-radius': 'var(--radius-2)',
-            }}
-          />
-          <div
-            class="box-border block flex-grow [width:var(--width)]"
-            style={{ '--width': 0 }}
-          >
-            <div class={textVariants({ size: '2', class: 'truncate' })}>
-              Pieces
-            </div>
-            <div
-              data-accent-color="gray"
-              class={textVariants({ size: '2', class: 'truncate' })}
-            >
-              Villagers – Becoming a Jackal
-            </div>
-          </div>
-          <div class="box-border block">
-            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
-              5:25
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <img
-            src="https://workos.imgix.net/images/945c66a9-afd9-4b1c-8eb0-4ce3992731ca.png?auto=format&fit=clip&q=80&w=192"
-            class="box-border block [height:var(--width)] [width:var(--width)]"
-            style={{
-              '--width': '48px',
-              '--height': '48px',
-              'object-fit': 'cover',
-              'border-radius': 'var(--radius-2)',
-            }}
-          />
-          <div
-            class="box-border block flex-grow [width:var(--width)]"
-            style={{ '--width': 0 }}
-          >
-            <div class={textVariants({ size: '2', class: 'truncate' })}>
-              Cola
-            </div>
-            <div
-              data-accent-color="gray"
-              class={textVariants({ size: '2', class: 'truncate' })}
-            >
-              Arlo Parks – Super Sad Generation
-            </div>
-          </div>
-          <div class="box-border block">
-            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
-              3:50
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <img
-            src="https://workos.imgix.net/images/3d9075e4-c232-4fb5-a1a4-b0a33d669192.png?auto=format&fit=clip&q=80&w=192"
-            class="box-border block [height:var(--width)] [width:var(--width)]"
-            style={{
-              '--width': '48px',
-              '--height': '48px',
-              'object-fit': 'cover',
-              'border-radius': 'var(--radius-2)',
-            }}
-          />
-          <div
-            class="box-border block flex-grow [width:var(--width)]"
-            style={{ '--width': 0 }}
-          >
-            <div class={textVariants({ size: '2', class: 'truncate' })}>
-              Do the Astral Plane
-            </div>
-            <div
-              data-accent-color="gray"
-              class={textVariants({ size: '2', class: 'truncate' })}
-            >
-              Flying Lotus – Cosmogramma
-            </div>
-          </div>
-          <div class="box-border block">
-            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
-              3:58
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3">
-          <img
-            src="https://workos.imgix.net/images/8d431b64-ebe8-41be-b986-2f59cb5c567d.png?auto=format&fit=clip&q=80&w=192"
-            class="box-border block [height:var(--width)] [width:var(--width)]"
-            style={{
-              '--width': '48px',
-              '--height': '48px',
-              'object-fit': 'cover',
-              'border-radius': 'var(--radius-2)',
-            }}
-          />
-          <div
-            class="box-border block flex-grow [width:var(--width)]"
-            style={{ '--width': 0 }}
-          >
-            <div class={textVariants({ size: '2', class: 'truncate' })}>
-              Left Hand Free
-            </div>
-            <div
-              data-accent-color="gray"
-              class={textVariants({ size: '2', class: 'truncate' })}
-            >
-              Alt-J – This Is All Yours
-            </div>
-          </div>
-          <div class="box-border block">
-            <div data-accent-color="gray" class={textVariants({ size: '2' })}>
-              2:54
-            </div>
-          </div>
-        </div>
+        <Card1Item
+          image="https://workos.imgix.net/images/79645741-51e0-47fc-bb40-2fa66cf9f68e.png?auto=format&fit=clip&q=80&w=192"
+          title="The Less I Know the Better"
+          subtitle="Tame Impala – Currents"
+          duration="3:39"
+        />
+        <Card1Item
+          image="https://workos.imgix.net/images/95ff9b99-36f3-46d8-a3fe-9387fd7c3c32.png?auto=format&fit=clip&q=80&w=192"
+          title="Pieces"
+          subtitle="Villagers – Becoming a Jackal"
+          duration="5:25"
+        />
+        <Card1Item
+          image="https://workos.imgix.net/images/8d431b64-ebe8-41be-b986-2f59cb5c567d.png?auto=format&fit=clip&q=80&w=192"
+          title="Left Hand Free"
+          subtitle="Alt-J – This Is All Yours"
+          duration="2:54"
+        />
       </div>
-    </CardWrapper>
+    </Card>
   )
 }
 
 const Card2 = () => {
   return (
-    <CardWrapper>
+    <Card>
       <div class="mb-5 flex items-center justify-between">
         <h3 class={textVariants({ size: '4', class: 'lt-start' })}>Sound</h3>
         <div class="flex gap-4">
@@ -390,6 +294,6 @@ const Card2 = () => {
           </div>
         </label>
       </div>
-    </CardWrapper>
+    </Card>
   )
 }

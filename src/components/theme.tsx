@@ -42,7 +42,7 @@ export type ThemeProps = {
   children?: JSX.Element
 }
 
-export const Theme = (props: ThemeProps) => {
+export const createThemeProps = (props: ThemeProps) => {
   props = mergeProps(
     {
       accentColor: 'gray',
@@ -52,17 +52,24 @@ export const Theme = (props: ThemeProps) => {
     } satisfies ThemeProps,
     props,
   )
+
+  return () => ({
+    'data-is-root-theme': props.isRoot ? 'true' : 'false',
+    'data-accent-color': props.accentColor,
+    'data-gray-color': props.resolvedGrayColor,
+    'data-has-background': props.hasBackground ? 'true' : 'false',
+    'data-panel-background': props.panelBackground,
+    'data-radius': props.radius,
+    'data-scaling': props.scaling,
+  })
+}
+
+export const Theme = (props: ThemeProps) => {
+  const attrs = createThemeProps(props)
   return (
     <div
       {...props}
-      data-is-root-theme={props.isRoot ? 'true' : 'false'}
-      data-accent-color={props.accentColor}
-      data-gray-color={props.resolvedGrayColor}
-      // for nested `Theme` background
-      data-has-background={props.hasBackground ? 'true' : 'false'}
-      data-panel-background={props.panelBackground}
-      data-radius={props.radius}
-      data-scaling={props.scaling}
+      {...attrs()}
       class={cx('radix-themes', props.class)}
       classList={{
         light: props.appearance === 'light',

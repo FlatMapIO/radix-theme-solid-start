@@ -1,4 +1,5 @@
 import { Demo } from '~/components/demo'
+import { TailwindIndicator } from '~/components/tailwind-indicator'
 import { Theme } from '~/components/theme'
 
 export default function Home() {
@@ -11,9 +12,10 @@ export default function Home() {
       panelBackground="translucent"
       radius="medium"
       scaling="100%"
-      class="radix-themes p-10 [transform:scale(calc(12/16))]"
+      class="radix-themes p-10 font-sans antialiased "
     >
       <Demo />
+      <TailwindIndicator />
     </Theme>
   )
 }
