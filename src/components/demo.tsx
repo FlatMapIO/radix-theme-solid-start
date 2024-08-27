@@ -293,7 +293,7 @@ const Card2 = () => {
             data-accent-color
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon' }}
+            styled={{ type: 'icon-button' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -322,7 +322,7 @@ const Card2 = () => {
             data-accent-color
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon' }}
+            styled={{ type: 'icon-button' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -351,7 +351,7 @@ const Card2 = () => {
             data-accent-color="gray"
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon' }}
+            styled={{ type: 'icon-button', variant:'soft' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -380,7 +380,7 @@ const Card2 = () => {
             data-accent-color="gray"
             data-radius="full"
             tabindex="-1"
-            styled={{ type: 'icon' }}
+            styled={{ type: 'icon-button', variant:'soft' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
