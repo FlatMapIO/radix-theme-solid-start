@@ -4,13 +4,22 @@ A SolidStart template with Radix UI theme converted to CSS modules and integrate
 
 ## Features
 
-- Radix UI components styled with CSS modules
-- Integration with cva (class variance authority) for dynamic styling
-- Compatible with Tailwind CSS
-- Customizable color schemes
-- Easy to adapt for other meta-frameworks
+<div style="display: flex; gap: 20px;">
 
-<img src="assets/image.png" alt="Show case" width="700">
+  <div style="flex: 1;">
+
+  - Radix UI components styled with CSS modules
+  - Integration with cva (class variance authority) for dynamic styling
+  - Compatible with Tailwind CSS
+  - Customizable color schemes
+  - Easy to adapt for other meta-frameworks
+
+  </div>
+
+  <img src="assets/image.png" alt="Show case" style="width: 400px;">
+</div>
+
+
 
 
 ## Getting Started
