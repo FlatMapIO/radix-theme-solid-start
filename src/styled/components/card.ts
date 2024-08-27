@@ -1,8 +1,9 @@
 import { cva, VariantProps } from '~/lib/utils'
+import baseCardStyles from './base-card.module.css'
 import styles from './card.module.css'
 
 export const cardVariants = cva(
-  ['rt-reset', styles['rt-BaseCard'], styles['rt-Card']],
+  ['rt-reset', baseCardStyles['rt-BaseCard'], styles['rt-Card']],
   {
     defaultVariants: {
       size: '1',
