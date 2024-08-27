@@ -10,6 +10,9 @@ A SolidStart template with Radix UI theme converted to CSS modules and integrate
 - Customizable color schemes
 - Easy to adapt for other meta-frameworks
 
+<img src="assets/image.png" alt="Show case" width="700">
+
+
 ## Getting Started
 
 This project is a template, so there's no need for installation. Simply clone the repository and make a few modifications to get started.
