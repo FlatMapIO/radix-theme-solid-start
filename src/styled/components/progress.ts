@@ -26,20 +26,19 @@ export const progressVariants = {
   indicator: styles['rt-ProgressIndicator'],
 }
 
-export const progressAttrs = (props: {
-  value?: number
-  max?: number
-  indeterminate?: boolean
-  duration?: `${number}s` | `${number}ms`
-}) => ({
-  root: {
+export const progressAttrs = {
+  root: (props: {
+    max?: number
+    value?: number
+    duration?: `${number}s` | `${number}ms`
+  }) => ({
     style: {
       '--progress-duration': 'value' in props ? undefined : props.duration,
       '--progress-value': 'value' in props ? props.value : undefined,
       '--progress-max': 'max' in props ? props.max : undefined,
     },
-  },
-  indicator: {
+  }),
+  indicator: (props: { indeterminate?: boolean }) => ({
     'data-state': props.indeterminate ? 'indeterminate' : undefined,
-  },
-})
+  }),
+}

@@ -32,9 +32,7 @@ export const checkboxVariants = {
 export type CheckboxVariants = VariantProps<(typeof checkboxVariants)['root']>
 
 export const checkboxAttrs = (props: {
-  disabled?: boolean
   state?: 'unchecked' | 'checked' | 'indeterminate'
 }) => ({
-  'data-disabled': props.disabled ? true : undefined,
   'data-state': props.state,
 })

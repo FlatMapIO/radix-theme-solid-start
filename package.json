@@ -9,13 +9,11 @@
   },
   "dependencies": {
     "@ark-ui/solid": "^3.9.0",
+    "@kobalte/core": "^0.13.6",
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.14.1",
     "@solidjs/start": "^1.0.6",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "solid-js": "^1.8.18",
-    "vinxi": "^0.4.2"
+    "solid-js": "^1.8.18"
   },
   "engines": {
     "node": ">=18"
@@ -25,6 +23,9 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.3.1",
     "@radix-ui/colors": "^3.0.0",
     "@types/bun": "^1.1.8",
+    "vinxi": "^0.4.2",
+    "postcss": "^8.4.38",
+    "autoprefixer": "^10.4.20",
     "clsx": "^2.1.1",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.0",

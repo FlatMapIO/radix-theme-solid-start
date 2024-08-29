@@ -30,18 +30,20 @@ export const baseMenuVariants = {
   separator: styles['rt-BaseMenuSeparator'],
 }
 
-export const menuAttrs = (props: {
-  highlighted?: boolean
-  orientation?: 'vertical' | 'horizontal'
-  accentColor?: string
-  disabled?: boolean
-}) => ({
-  root: {
+export const menuAttrs = () => ({
+  root: (props: { orientation?: 'vertical' | 'horizontal' }) => ({
     'data-orientation': props.orientation,
-  },
-  item: {
+  }),
+  trigger: (props: { state?: 'open' | 'closed' }) => ({
+    'data-state': props.state,
+  }),
+  item: (props: {
+    highlighted?: boolean
+    accentColor?: string
+    disabled?: boolean
+  }) => ({
     'data-highlighted': props.highlighted ? '' : undefined,
     'data-accent-color': props.accentColor,
     'data-disabled': props.disabled ? '' : undefined,
-  },
+  }),
 })

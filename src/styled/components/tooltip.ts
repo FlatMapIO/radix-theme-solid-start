@@ -7,12 +7,14 @@ export const tooltipVariants = {
   arrow: styles['rt-TooltipArrow'],
 }
 
-export const tooltipAttrs = (props: {
-  state?: 'delayed-open'
-  side?: 'top' | 'bottom' | 'left' | 'right'
-}) => ({
-  content: {
-    'data-state': props.state,
-    'data-side': props.side,
-  },
-})
+export const tooltipAttrs = {
+  content: (props: {
+    state?: 'delayed-open'
+    side?: 'top' | 'bottom' | 'left' | 'right'
+  }) => ({
+    content: {
+      'data-state': props.state,
+      'data-side': props.side,
+    },
+  }),
+}

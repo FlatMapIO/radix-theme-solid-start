@@ -1,15 +1,15 @@
 @import './colors/gray.css';
-/* @import './colors/mauve.css';
+@import './colors/mauve.css';
 @import './colors/slate.css';
 @import './colors/sage.css';
 @import './colors/olive.css';
-@import './colors/sand.css'; */
+@import './colors/sand.css';
 
-/* @import './colors/amber.css';
+@import './colors/amber.css';
 @import './colors/blue.css';
-@import './colors/bronze.css'; */
+@import './colors/bronze.css';
 @import './colors/brown.css';
-/* @import './colors/crimson.css';
+@import './colors/crimson.css';
 @import './colors/cyan.css';
 @import './colors/gold.css';
 @import './colors/grass.css';
@@ -29,6 +29,6 @@
 @import './colors/teal.css';
 @import './colors/tomato.css';
 @import './colors/violet.css';
-@import './colors/yellow.css'; */
+@import './colors/yellow.css';
 
 @import './base.css';

@@ -17,12 +17,12 @@ export const scrollAreaVariants = {
   thumb: styles['rt-ScrollAreaThumb'],
 }
 
-export const scrollAreaAttrs = (props: {
-  orientation?: 'vertical' | 'horizontal'
-  state?: 'visible' | 'hidden'
-}) => ({
-  scrollbar: {
+export const scrollAreaAttrs = {
+  scrollbar: (props: {
+    orientation?: 'vertical' | 'horizontal'
+    state?: 'visible' | 'hidden'
+  }) => ({
     'data-orientation': props.orientation,
     'data-state': props.state,
-  },
-})
+  }),
+}

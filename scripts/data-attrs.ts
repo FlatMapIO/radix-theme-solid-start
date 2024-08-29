@@ -2,13 +2,14 @@
 
 async function findDataAttributes(): Promise<Map<string, Set<string>>> {
   const dataAttributesMap = new Map<string, Set<string>>()
-  const glob = new Bun.Glob('**/*.css')
+  const glob = new Bun.Glob('**/*.module.css')
 
   const files = glob.scanSync({ cwd: './src' })
 
   for (const file of files) {
     const content = await Bun.file(`src/${file}`).text()
-    const regex = /data-[a-zA-Z0-9-]+(?:="[^"]*")?/g
+    // 修改正则表达式以只匹配 data- 属性，排除 CSS 变量
+    const regex = /(?<!\-)\bdata-[a-zA-Z0-9-]+(?:="[^"]*")?/g
     const matches = content.match(regex)
     if (matches) {
       const fileAttributes = new Set<string>()

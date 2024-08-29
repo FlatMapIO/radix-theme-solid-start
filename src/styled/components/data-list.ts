@@ -44,16 +44,13 @@ export const dataListVariants = {
   value: styles['rt-DataListValue'],
 }
 
-export const dataListAttrs = (props: {
-  accentColor?: string
-  highContrast?: boolean
-}) => ({
-  root: {
+export const dataListAttrs = () => ({
+  root: (props: { accentColor?: string }) => ({
     'data-accent-color': props.accentColor,
-  },
-  label: {
+  }),
+  label: (props: { highContrast?: boolean }) => ({
     'data-high-contrast': props.highContrast ? 'true' : undefined,
-  },
+  }),
 })
 
 export type DataListRootVariants = VariantProps<typeof dataListVariants.root>

@@ -20,19 +20,12 @@ export const textFieldVariants = {
   slot: styles['rt-TextFieldSlot'],
 }
 
-export const textFieldAttrs = (props: {
-  disabled?: boolean
-  readOnly?: boolean
-  autofill?: boolean
-  onePasswordFilled?: boolean
-  side?: 'left' | 'right'
-  accentColor?: string
-}) => ({
-  input: {
+export const textFieldAttrs = () => ({
+  input: (props: { onePasswordFilled?: boolean }) => ({
     'data-com-onepassword-filled': props.onePasswordFilled ? '' : undefined,
-  },
-  slot: {
+  }),
+  slot: (props: { side?: 'left' | 'right'; accentColor?: string }) => ({
     'data-side': props.side,
     'data-accent-color': props.accentColor,
-  },
+  }),
 })

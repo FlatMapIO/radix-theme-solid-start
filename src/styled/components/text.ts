@@ -20,13 +20,6 @@ export const textVariants = cva(styles['rt-Text'], {
   },
 })
 
-export const textElements = {
-  strong: styles['rt-Strong'],
-  em: styles['rt-Em'],
-  quote: styles['rt-Quote'],
-  blockquote: styles['rt-Blockquote'],
-}
-
 export const textAttrs = (props: { accentColor?: string }) => ({
   'data-accent-color': props.accentColor,
 })
