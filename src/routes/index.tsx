@@ -1,6 +1,6 @@
 import { Demo } from '~/components/demo'
 import { LiveExamples } from '~/components/live-examples'
-import { RadixTheme } from '~/components/radix-theme'
+import { RadixTheme } from '~/styled/components/radix-theme'
 import { TailwindIndicator } from '~/components/tailwind-indicator'
 
 export default function Home() {

@@ -26,7 +26,7 @@ export const accentColors = [
   'mint',
   'sky',
 ] as const
-export type AccentColor = (typeof accentColors)[number]
+
 export const grayColors = [
   'auto',
   'gray',
@@ -37,4 +37,5 @@ export const grayColors = [
   'sand',
 ] as const
 
-export type GrayColor = typeof grayColors
+export type AccentColor = (typeof accentColors)[number]
+export type GrayColor = (typeof grayColors)[number]

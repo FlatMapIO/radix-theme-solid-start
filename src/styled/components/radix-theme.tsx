@@ -3,6 +3,7 @@ import { isServer } from 'solid-js/web'
 
 import { cx } from '~/lib/utils'
 import type { AccentColor, GrayColor } from '~/styled/tokens/accent-colors'
+import type { Radius } from '../tokens/radius'
 
 export type ThemeProps = {
   isRoot?: boolean
@@ -12,7 +13,7 @@ export type ThemeProps = {
   hasBackground?: boolean
   panelBackground?: 'solid' | 'translucent'
   appearance?: 'inherit' | 'light' | 'dark'
-  radius?: 'none' | 'small' | 'medium' | 'large' | 'full'
+  radius?: Radius
   scaling?: '90%' | '95%' | '100%' | '105%' | '110%'
   class?: string
   children?: JSX.Element
