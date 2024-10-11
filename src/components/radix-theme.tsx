@@ -1,4 +1,5 @@
 import { mergeProps, type JSX } from 'solid-js'
+import { isServer } from 'solid-js/web'
 
 import { cx } from '~/lib/utils'
 
@@ -66,6 +67,18 @@ export const createThemeProps = (props: ThemeProps) => {
 
 export const RadixTheme = (props: ThemeProps) => {
   const attrs = createThemeProps(props)
+
+  if (import.meta.env.DEV) {
+    if (!isServer) {
+      // https://www.radix-ui.com/themes/playground
+      console.log(
+        '%c🎨 Customize Radix Theme: %chttps://www.radix-ui.com/themes/playground',
+        'color: #00C853; font-weight: bold;',
+        'color: #2196F3; text-decoration: underline;',
+      )
+    }
+  }
+
   return (
     <div
       {...props}
