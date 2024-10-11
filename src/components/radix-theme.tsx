@@ -2,37 +2,12 @@ import { mergeProps, type JSX } from 'solid-js'
 import { isServer } from 'solid-js/web'
 
 import { cx } from '~/lib/utils'
+import type { AccentColor, GrayColor } from '~/styled/tokens/accent-colors'
 
 export type ThemeProps = {
   isRoot?: boolean
-  accentColor?:
-    | 'gray'
-    | 'gold'
-    | 'bronze'
-    | 'brown'
-    | 'yellow'
-    | 'amber'
-    | 'orange'
-    | 'tomato'
-    | 'red'
-    | 'ruby'
-    | 'crimson'
-    | 'pink'
-    | 'plum'
-    | 'purple'
-    | 'violet'
-    | 'iris'
-    | 'indigo'
-    | 'blue'
-    | 'cyan'
-    | 'teal'
-    | 'jade'
-    | 'green'
-    | 'grass'
-    | 'lime'
-    | 'mint'
-    | 'sky'
-  grayColor?: 'auto' | 'gray' | 'mauve' | 'slate' | 'sage' | 'olive' | 'sand'
+  accentColor?: AccentColor
+  grayColor?: GrayColor
   resolvedGrayColor?: string
   hasBackground?: boolean
   panelBackground?: 'solid' | 'translucent'

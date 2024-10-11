@@ -1,4 +1,5 @@
 import { cva } from '~/lib/utils'
+import type { Radius } from '../tokens/radius'
 import styles from './switch.module.css'
 
 export const switchVariants = {
@@ -18,24 +19,25 @@ export const switchVariants = {
         classic: styles['rt-variant-classic'],
         soft: styles['rt-variant-soft'],
       },
+    },
+  }),
+  thumb: cva(styles['rt-SwitchThumb'], {
+    variants: {
       highContrast: {
         true: styles['rt-high-contrast'],
       },
     },
   }),
-  thumb: styles['rt-SwitchThumb'],
 }
 
 export const switchAttrs = (props: {
   disabled?: boolean
   checked?: boolean
+  radius?: Radius
 }) => ({
   root: {
     'data-disabled': props.disabled ? '' : undefined,
     'data-state': props.checked ? 'checked' : 'unchecked',
-  },
-  thumb: {
-    'data-state': props.checked ? 'checked' : 'unchecked',
-    'data-disabled': props.disabled ? '' : undefined,
+    'data-radius': props.radius,
   },
 })

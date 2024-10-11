@@ -2,6 +2,10 @@ import { cva } from '~/lib/utils'
 import styles from './inset.module.css'
 
 export const insetVariants = cva(styles['rt-Inset'], {
+  defaultVariants: {
+    clip: 'padding-box',
+    side: 'all',
+  },
   variants: {
     clip: {
       'padding-box': styles['rt-r-clip-padding-box'],

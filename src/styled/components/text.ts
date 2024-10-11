@@ -1,4 +1,10 @@
 import { cva } from '~/lib/utils'
+import type { AccentColor } from '../tokens/accent-colors'
+import { fontWeightVariants } from '../utilities/font-weight'
+import { leadingTrimVariants } from '../utilities/leading-trim'
+import { textAlignVariants } from '../utilities/text-align'
+import { textWrapVariants } from '../utilities/text-wrap'
+import { truncateVariants } from '../utilities/truncate'
 import styles from './text.module.css'
 
 export const textVariants = cva(styles['rt-Text'], {
@@ -17,9 +23,14 @@ export const textVariants = cva(styles['rt-Text'], {
     highContrast: {
       true: styles['rt-high-contrast'],
     },
+    trim: leadingTrimVariants,
+    wrap: textWrapVariants,
+    weight: fontWeightVariants,
+    truncate: truncateVariants,
+    align: textAlignVariants,
   },
 })
 
-export const textAttrs = (props: { accentColor?: string }) => ({
+export const textAttrs = (props: { accentColor?: AccentColor }) => ({
   'data-accent-color': props.accentColor,
 })

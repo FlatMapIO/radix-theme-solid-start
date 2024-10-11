@@ -29,7 +29,7 @@ export const calloutVariants = {
 
 export const calloutAttrs = (props: {
   highlighted?: boolean
-  accentColor?: string
+  accentColor?: AccentColor
 }) => ({
   'data-highlighted': props.highlighted ? true : undefined,
   'data-accent-color': props.accentColor,
@@ -128,7 +128,7 @@ export const textFieldVariants = {
 
 export const textFieldAttrs = (props: {
   side?: 'left' | 'right';
-  accentColor?: string;
+  accentColor?: AccentColor;
   autoFilled?: boolean;
 }) => ({
   input: {

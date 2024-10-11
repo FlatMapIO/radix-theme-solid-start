@@ -1,5 +1,9 @@
 import { cva, type VariantProps } from '~/lib/utils'
 import styles from './code.module.css'
+import type { AccentColor } from '../tokens/accent-colors'
+import { truncateVariants } from '../utilities/truncate'
+import { textWrapVariants } from '../utilities/text-wrap'
+import { fontWeightVariants } from '../utilities/font-weight'
 
 export const codeVariants = cva(['rt-reset', styles['rt-Code']], {
   variants: {
@@ -23,10 +27,13 @@ export const codeVariants = cva(['rt-reset', styles['rt-Code']], {
       '8': styles['rt-r-size-8'],
       '9': styles['rt-r-size-9'],
     },
+    truncate: truncateVariants,
+    wrap: textWrapVariants,
+    weight: fontWeightVariants,
   },
 })
 
-export const codeAttrs = (props: { accentColor?: string }) => ({
+export const codeAttrs = (props: { accentColor?: AccentColor }) => ({
   'data-accent-color': props.accentColor,
 })
 

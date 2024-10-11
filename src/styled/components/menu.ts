@@ -1,5 +1,6 @@
 import { cva, cx } from '~/lib/utils'
 import styles from './menu.module.css'
+import type { AccentColor } from '../tokens/accent-colors'
 
 export const baseMenuVariants = {
   content: cva(styles['rt-BaseMenuContent'], {
@@ -39,7 +40,7 @@ export const menuAttrs = () => ({
   }),
   item: (props: {
     highlighted?: boolean
-    accentColor?: string
+    accentColor?: AccentColor
     disabled?: boolean
   }) => ({
     'data-highlighted': props.highlighted ? '' : undefined,

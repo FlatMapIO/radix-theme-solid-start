@@ -1,13 +1,20 @@
 import { cva, type VariantProps } from '~/lib/utils'
 import styles from './avatar.module.css'
+import type { AccentColor } from '../tokens/accent-colors'
+import type { Radius } from '../tokens/radius'
 
 export const avatarVariants = {
   root: cva(['rt-reset', styles['rt-AvatarRoot']], {
     defaultVariants: {
       size: '2',
       variant: 'soft',
+      letter: 'two',
     },
     variants: {
+      letter: {
+        one: styles['rt-one-letter'],
+        two: styles['rt-two-letters'],
+      },
       highContrast: {
         true: styles['rt-high-contrast'],
       },
@@ -33,3 +40,11 @@ export const avatarVariants = {
 }
 
 export type AvatarVariants = VariantProps<typeof avatarVariants.root>
+
+export const avatarAttrs = (props: {
+  accentColor?: AccentColor
+  radius?: Radius
+}) => ({
+  'data-accent-color': props.accentColor,
+  'data-radius': props.radius,
+})

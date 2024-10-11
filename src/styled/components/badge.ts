@@ -1,4 +1,6 @@
 import { cva, type VariantProps } from '~/lib/utils'
+import type { AccentColor } from '../tokens/accent-colors'
+import type { Radius } from '../tokens/radius'
 import styles from './badge.module.css'
 
 export const badgeVariants = cva(['rt-reset', styles['rt-Badge']], {
@@ -21,3 +23,11 @@ export const badgeVariants = cva(['rt-reset', styles['rt-Badge']], {
 })
 
 export type BadgeVariants = VariantProps<typeof badgeVariants>
+
+export const badgeAttrs = (props: {
+  accentColor?: AccentColor
+  radius?: Radius
+}) => ({
+  'data-accent-color': props.accentColor,
+  'data-radius': props.radius,
+})

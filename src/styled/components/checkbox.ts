@@ -1,5 +1,6 @@
 import { cva, VariantProps } from '~/lib/utils'
 import styles from './checkbox.module.css'
+import type { AccentColor } from '../tokens/accent-colors'
 
 export const checkboxVariants = {
   root: cva(
@@ -33,6 +34,8 @@ export type CheckboxVariants = VariantProps<(typeof checkboxVariants)['root']>
 
 export const checkboxAttrs = (props: {
   state?: 'unchecked' | 'checked' | 'indeterminate'
+  accentColor?: AccentColor
 }) => ({
   'data-state': props.state,
+  'data-accent-color': props.accentColor,
 })

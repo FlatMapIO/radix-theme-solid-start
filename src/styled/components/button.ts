@@ -1,4 +1,6 @@
 import { cva, type VariantProps } from '~/lib/utils'
+import type { AccentColor } from '../tokens/accent-colors'
+import type { Radius } from '../tokens/radius'
 import styles from './button.module.css'
 
 export const buttonVariants = cva(['rt-reset', styles['rt-BaseButton']], {
@@ -42,7 +44,11 @@ export const buttonAttrs = (props: {
   disabled?: boolean
   state?: 'open' | 'closed'
   loading?: boolean
+  accentColor?: AccentColor
+  radius?: Radius
 }) => ({
   'data-disabled': props.disabled ? true : undefined,
   'data-state': props.state,
+  'data-accent-color': props.accentColor,
+  'data-radius': props.radius,
 })

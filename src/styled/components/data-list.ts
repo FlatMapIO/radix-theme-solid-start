@@ -1,7 +1,5 @@
 import { cva, type VariantProps } from '~/lib/utils'
-
-import '~/styles/utilities/leading-trim.module.css'
-
+import type { AccentColor } from '../tokens/accent-colors'
 import styles from './data-list.module.css'
 
 export const dataListVariants = {
@@ -9,7 +7,7 @@ export const dataListVariants = {
     defaultVariants: {
       orientation: 'horizontal',
       size: '2',
-      trim: 'normal',
+      // trim: 'normal',
     },
     variants: {
       size: {
@@ -45,7 +43,7 @@ export const dataListVariants = {
 }
 
 export const dataListAttrs = () => ({
-  root: (props: { accentColor?: string }) => ({
+  root: (props: { accentColor?: AccentColor }) => ({
     'data-accent-color': props.accentColor,
   }),
   label: (props: { highContrast?: boolean }) => ({
