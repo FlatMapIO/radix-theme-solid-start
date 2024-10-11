@@ -1,11 +1,11 @@
 import { Demo } from '~/components/demo'
 import { LiveExamples } from '~/components/live-examples'
+import { RadixTheme } from '~/components/radix-theme'
 import { TailwindIndicator } from '~/components/tailwind-indicator'
-import { Theme } from '~/components/theme'
 
 export default function Home() {
   return (
-    <Theme
+    <RadixTheme
       isRoot
       // appearance='dark'
       accentColor="brown"
@@ -19,6 +19,6 @@ export default function Home() {
       <Demo />
       <LiveExamples />
       <TailwindIndicator />
-    </Theme>
+    </RadixTheme>
   )
 }

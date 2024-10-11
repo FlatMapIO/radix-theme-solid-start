@@ -64,7 +64,7 @@ export const createThemeProps = (props: ThemeProps) => {
   })
 }
 
-export const Theme = (props: ThemeProps) => {
+export const RadixTheme = (props: ThemeProps) => {
   const attrs = createThemeProps(props)
   return (
     <div
