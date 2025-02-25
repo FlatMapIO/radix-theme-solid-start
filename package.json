@@ -13,7 +13,7 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.14.8",
     "@solidjs/start": "^1.0.8",
-    "solid-js": "^1.9.2"
+    "solid-js": "^1.9.4"
   },
   "engines": {
     "node": ">=18"
